@@ -1,0 +1,5 @@
+E:\Code\game\gameideas\gameconsole\bin\Debug\gameconsole.exe.config
+E:\Code\game\gameideas\gameconsole\bin\Debug\gameconsole.exe
+E:\Code\game\gameideas\gameconsole\bin\Debug\gameconsole.pdb
+E:\Code\game\gameideas\gameconsole\obj\Debug\gameconsole.exe
+E:\Code\game\gameideas\gameconsole\obj\Debug\gameconsole.pdb
