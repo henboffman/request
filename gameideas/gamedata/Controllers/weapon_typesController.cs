@@ -20,7 +20,15 @@ namespace gamedata.Controllers
         // GET: api/weapon_types
         public IQueryable<weapon_types> Getweapon_types()
         {
-            return db.weapon_types;
+            try
+            {
+                return db.weapon_types;
+            }
+            catch (Exception error)
+            {
+                throw error;
+            }
+            
         }
 
         // GET: api/weapon_types/5

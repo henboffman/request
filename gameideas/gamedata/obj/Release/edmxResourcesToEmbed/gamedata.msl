@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="requestModelStoreContainer" CdmEntityContainer="requestEntities">
+    <EntitySetMapping Name="weapon_types">
+      <EntityTypeMapping TypeName="requestModel.weapon_types">
+        <MappingFragment StoreEntitySet="weapon_types">
+          <ScalarProperty Name="Hands_Required" ColumnName="Hands_Required" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="weapons">
+      <EntityTypeMapping TypeName="requestModel.weapon">
+        <MappingFragment StoreEntitySet="weapons">
+          <ScalarProperty Name="Speed" ColumnName="Speed" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Min_Value" ColumnName="Min_Value" />
+          <ScalarProperty Name="Min_Damage" ColumnName="Min_Damage" />
+          <ScalarProperty Name="Min_Durability" ColumnName="Min_Durability" />
+          <ScalarProperty Name="Max_Value" ColumnName="Max_Value" />
+          <ScalarProperty Name="Max_Damage" ColumnName="Max_Damage" />
+          <ScalarProperty Name="Max_Durability" ColumnName="Max_Durability" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
