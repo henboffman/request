@@ -66,118 +66,120 @@
         </div>
     </div>
 
-    <div id="weaponModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Create Weapon</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="weaponName">Weapon Name</label>
-                        <input type="text" class="form-control" id="weaponName" placeholder="weapon name" data-bind="value: newWeapon().Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="weaponType">Type</label>
-                        <select data-bind="options: weaponTypes, optionsText: 'Name', value: newWeapon().TypeId, optionsValue: 'id'"></select>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="speed">Speed</label>
-                                <input type="number" class="form-control" id="speed" placeholder="0-100" data-bind="value: newWeapon().Speed" min="0" max="100">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="weight">Weight</label>
-                                <input type="number" class="form-control" id="weight" placeholder="0-100" data-bind="value: newWeapon().Weight" min="0" max="100">
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="minDurability">Min. Durability</label>
-                                <input type="number" class="form-control" id="minDurability" placeholder="0-100" data-bind="value: newWeapon().Min_Durability" min="0" max="100">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="maxDurability">Max. Durability</label>
-                                <input type="number" class="form-control" id="maxDurability" placeholder="0-100" data-bind="value: newWeapon().Max_Durability" min="0" max="100">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="minDamage">Min. Damage</label>
-                                <input type="number" class="form-control" id="minDamage" placeholder="0-100" data-bind="value: newWeapon().Min_Damage" min="0" max="100">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="maxDamage">Max. Damage</label>
-                                <input type="number" class="form-control" id="maxDamage" placeholder="0-100" data-bind="value: newWeapon().Max_Damage" min="0" max="100">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="minValue">Min. Value</label>
-                                <input type="number" class="form-control" id="minValue" placeholder="0-100" data-bind="value: newWeapon().Min_Value" min="0" max="100">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="maxValue">Max. Value</label>
-                                <input type="number" class="form-control" id="maxValue" placeholder="0-100" data-bind="value: newWeapon().Max_Value" min="0" max="100">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button data-bind="click:saveWeapon" class="btn btn-primary">Save Weapon</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div id="weaponTypeModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Create Weapon Type</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="weaponTypeName">Weapon Type Name</label>
-                        <input type="text" class="form-control" id="weaponTypeName" placeholder="sword, axe, etc..." data-bind="value: newWeaponType().Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="weaponTypeDescription">Description</label>
-                        <input type="text" class="form-control" id="weaponTypeDescription" placeholder="A sword is a long bladed weapon intended for slashing or thrusting" data-bind="value: newWeaponType().Description">
-                    </div>
-                    <div class="form-group">
-                        <label for="weaponTypeDescription">Hands Required</label>
-                        <div>
-                            <input type="radio" name="weaponTypeDescription" value="1" data-bind="checked: newWeaponType().Hands_Required" /> 1
-                        </div>
-                        <div>
-                            <input type="radio" name="weaponTypeDescription" value="2" data-bind="checked: newWeaponType().Hands_Required" /> 2
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button data-bind="click:saveWeaponType" class="btn btn-primary">Save Weapon Type</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
 
 </section>
+
+
+<div id="weaponModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Create Weapon</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="weaponName">Weapon Name</label>
+                    <input type="text" class="form-control" id="weaponName" placeholder="weapon name" data-bind="value: newWeapon().Name">
+                </div>
+                <div class="form-group">
+                    <label for="weaponType">Type</label>
+                    <select data-bind="options: weaponTypes, optionsText: 'Name', value: newWeapon().TypeId, optionsValue: 'id'"></select>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="speed">Speed</label>
+                            <input type="number" class="form-control" id="speed" placeholder="0-100" data-bind="value: newWeapon().Speed" min="0" max="100">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="weight">Weight</label>
+                            <input type="number" class="form-control" id="weight" placeholder="0-100" data-bind="value: newWeapon().Weight" min="0" max="100">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="minDurability">Min. Durability</label>
+                            <input type="number" class="form-control" id="minDurability" placeholder="0-100" data-bind="value: newWeapon().Min_Durability" min="0" max="100">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="maxDurability">Max. Durability</label>
+                            <input type="number" class="form-control" id="maxDurability" placeholder="0-100" data-bind="value: newWeapon().Max_Durability" min="0" max="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="minDamage">Min. Damage</label>
+                            <input type="number" class="form-control" id="minDamage" placeholder="0-100" data-bind="value: newWeapon().Min_Damage" min="0" max="100">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="maxDamage">Max. Damage</label>
+                            <input type="number" class="form-control" id="maxDamage" placeholder="0-100" data-bind="value: newWeapon().Max_Damage" min="0" max="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="minValue">Min. Value</label>
+                            <input type="number" class="form-control" id="minValue" placeholder="0-100" data-bind="value: newWeapon().Min_Value" min="0" max="100">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="maxValue">Max. Value</label>
+                            <input type="number" class="form-control" id="maxValue" placeholder="0-100" data-bind="value: newWeapon().Max_Value" min="0" max="100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button data-bind="click:saveWeapon" class="btn btn-primary">Save Weapon</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="weaponTypeModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Create Weapon Type</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="weaponTypeName">Weapon Type Name</label>
+                    <input type="text" class="form-control" id="weaponTypeName" placeholder="sword, axe, etc..." data-bind="value: newWeaponType().Name">
+                </div>
+                <div class="form-group">
+                    <label for="weaponTypeDescription">Description</label>
+                    <input type="text" class="form-control" id="weaponTypeDescription" placeholder="A sword is a long bladed weapon intended for slashing or thrusting" data-bind="value: newWeaponType().Description">
+                </div>
+                <div class="form-group">
+                    <label for="weaponTypeDescription">Hands Required</label>
+                    <div>
+                        <input type="radio" name="weaponTypeDescription" value="1" data-bind="checked: newWeaponType().Hands_Required" /> 1
+                    </div>
+                    <div>
+                        <input type="radio" name="weaponTypeDescription" value="2" data-bind="checked: newWeaponType().Hands_Required" /> 2
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button data-bind="click:saveWeaponType" class="btn btn-primary">Save Weapon Type</button>
+            </div>
+        </div>
+
+    </div>
+</div>

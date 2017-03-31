@@ -21,6 +21,7 @@ namespace gamedata {
           .Include("~/Content/font-awesome.min.css")
 		  .Include("~/Content/durandal.css")
           .Include("~/Content/starterkit.css")
+          .Include("~/Content/app.css")
         );
     }
 
