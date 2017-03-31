@@ -1,3 +1,15 @@
+<h3>Todo</h3>
+<ul>
+<li>Enemies</li>
+<li>Armor</li>
+<li>Items</li>
+<li>Weapons - projectiles</li>
+<li>Elemental damage</li>
+<li>Blue weapons (prefix/suffix)</li>
+<li></li>
+<li></li>
+</ul>
+
 
 <h3>Ideas</h3>
 <ul>
