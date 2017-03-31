@@ -6,7 +6,15 @@
 <li>Weapons - projectiles</li>
 <li>Elemental damage</li>
 <li>Blue weapons (prefix/suffix)</li>
-<li></li>
+<li>Orange Weapons</li>
+<li>Purple Weapons</li>
+<li>Environments</li>
+<li>Rooms</li>
+<li>Random Generator</li>
+<li>Experience/levels</li>
+<li>Customization</li>
+<li>Drop rate</li>
+<li>Auction House</li>
 <li></li>
 </ul>
 
