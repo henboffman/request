@@ -1,5 +1,6 @@
 <h3>Todo</h3>
 <ul>
+<li>Separate each category into a tab<li>
 <li>Enemies</li>
 <li>Armor</li>
 <li>Items</li>
