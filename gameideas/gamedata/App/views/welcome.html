@@ -4,36 +4,38 @@
         <h3>Weapons</h3>
         <button data-toggle="modal" data-target="#weaponModal">Create Weapon</button>
         <div class="col-md-12">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <td>ID</td>
-                        <td>Name</td>
-                        <td>Speed</td>
-                        <td>Weight</td>
-                        <td>Min. Durability</td>
-                        <td>Max. Durability</td>
-                        <td>Min. Damage</td>
-                        <td>Max. Damage</td>
-                        <td>Min. Value</td>
-                        <td>Max. Value</td>
-                    </tr>
-                </thead>
-                <tbody data-bind="foreach: weapons">
-                    <tr>
-                        <td data-bind="text:id"></td>
-                        <td data-bind="text:Name"></td>
-                        <td data-bind="text:Speed"></td>
-                        <td data-bind="text:Weight"></td>
-                        <td data-bind="text:Min_Durability"></td>
-                        <td data-bind="text:Max_Durability"></td>
-                        <td data-bind="text:Min_Damage"></td>
-                        <td data-bind="text:Max_Damage"></td>
-                        <td data-bind="text:Min_Value"></td>
-                        <td data-bind="text:Max_Value"></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>Name</td>
+                            <td>Speed</td>
+                            <td>Weight</td>
+                            <td>Min. Durability</td>
+                            <td>Max. Durability</td>
+                            <td>Min. Damage</td>
+                            <td>Max. Damage</td>
+                            <td>Min. Value</td>
+                            <td>Max. Value</td>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: weapons">
+                        <tr>
+                            <td data-bind="text:id"></td>
+                            <td data-bind="text:Name"></td>
+                            <td data-bind="text:Speed"></td>
+                            <td data-bind="text:Weight"></td>
+                            <td data-bind="text:Min_Durability"></td>
+                            <td data-bind="text:Max_Durability"></td>
+                            <td data-bind="text:Min_Damage"></td>
+                            <td data-bind="text:Max_Damage"></td>
+                            <td data-bind="text:Min_Value"></td>
+                            <td data-bind="text:Max_Value"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -41,24 +43,26 @@
         <h3>Weapon Types</h3>
         <button data-toggle="modal" data-target="#weaponTypeModal">Create Weapon Type</button>
         <div class="col-md-12">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <td>ID</td>
-                        <td>Name</td>
-                        <td>Description</td>
-                        <td>Hands Required</td>
-                    </tr>
-                </thead>
-                <tbody data-bind="foreach: weaponTypes">
-                    <tr>
-                        <td data-bind="text: id"></td>
-                        <td data-bind="text: Name"></td>
-                        <td data-bind="text: Description"></td>
-                        <td data-bind="text: Hands_Required"></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>Name</td>
+                            <td>Description</td>
+                            <td>Hands Required</td>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: weaponTypes">
+                        <tr>
+                            <td data-bind="text: id"></td>
+                            <td data-bind="text: Name"></td>
+                            <td data-bind="text: Description"></td>
+                            <td data-bind="text: Hands_Required"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 

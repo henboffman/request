@@ -11,7 +11,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="App/main.js">
-      <publishTime>03/30/2017 19:28:29</publishTime>
+      <publishTime>03/30/2017 21:07:46</publishTime>
     </File>
     <File Include="App/services/dataService.js">
       <publishTime>03/30/2017 20:48:39</publishTime>
@@ -20,7 +20,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2017 19:28:29</publishTime>
     </File>
     <File Include="App/viewmodels/shell.js">
-      <publishTime>03/30/2017 19:28:29</publishTime>
+      <publishTime>03/30/2017 21:07:26</publishTime>
     </File>
     <File Include="App/viewmodels/welcome.js">
       <publishTime>03/30/2017 20:50:42</publishTime>
@@ -476,7 +476,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2017 19:05:32</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/30/2017 20:59:18</publishTime>
+      <publishTime>03/30/2017 21:08:07</publishTime>
     </File>
   </ItemGroup>
 </Project>
