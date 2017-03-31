@@ -77,6 +77,7 @@
                 console.log(savedWeapon);
                 weapons.push(savedWeapon);
                 $('#weaponModal').modal('hide');
+                newWeapon(new Weapon());                
             });
             
         }        
@@ -113,6 +114,7 @@
                 console.log(savedWeaponType);
                 weaponTypes.push(savedWeaponType);
                 $('#weaponTypeModal').modal('hide');
+                newWeaponType(new WeaponType());
             });
         }
         
