@@ -2,9 +2,13 @@
 
     <div class="col-md-12">
         <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#weapons" aria-controls="weapons" role="tab" data-toggle="tab">Weapons</a></li>
-            <li role="presentation"><a href="#weaponTypes" aria-controls="weaponTypes" role="tab" data-toggle="tab">Weapon Types</a></li>
-
+            <li role="presentation" class="active"><a href="#weapons" aria-controls="weapons" role="tab" data-toggle="tab">Weapons</a></li>            
+            <li role="presentation"><a href="#armor" aria-controls="armor" role="tab" data-toggle="tab">Armor</a></li>
+            <li role="presentation"><a href="#items" aria-controls="items" role="tab" data-toggle="tab">Items</a></li>
+            <li role="presentation"><a href="#enemies" aria-controls="enemies" role="tab" data-toggle="tab">Enemies</a></li>
+            <li role="presentation"><a href="#environments" aria-controls="environments" role="tab" data-toggle="tab">Environments</a></li>
+            <li role="presentation"><a href="#rooms" aria-controls="rooms" role="tab" data-toggle="tab">Rooms</a></li>
+            
         </ul>
 
         <!-- Tab panes -->
@@ -12,7 +16,7 @@
             <div role="tabpanel" class="tab-pane active" id="weapons">
                 <h3>Weapons</h3>
                 <button data-toggle="modal" data-target="#weaponModal">Create Weapon</button>
-                <div class="col-md-12">
+                <div class="col-md-12 dataTable">
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
@@ -47,11 +51,9 @@
                     </div>
                 </div>
 
-            </div>
-            <div role="tabpanel" class="tab-pane" id="weaponTypes">
                 <h3>Weapon Types</h3>
                 <button data-toggle="modal" data-target="#weaponTypeModal">Create Weapon Type</button>
-                <div class="col-md-12">
+                <div class="col-md-12 dataTable">
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
@@ -73,7 +75,14 @@
                         </table>
                     </div>
                 </div>
+
             </div>
+            <div role="tabpanel" class="tab-pane" id="armor"></div>
+            <div role="tabpanel" class="tab-pane" id="items"></div>
+            <div role="tabpanel" class="tab-pane" id="enemies"></div>
+            <div role="tabpanel" class="tab-pane" id="environments"></div>
+            <div role="tabpanel" class="tab-pane" id="rooms"></div>
+
         </div>
     </div>
 </section>
