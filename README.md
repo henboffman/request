@@ -16,7 +16,7 @@
 <li>Customization</li>
 <li>Drop rate</li>
 <li>Auction House</li>
-<li></li>
+<li>Display average damage of weapons for a selected type on weapon create screen</li>
 </ul>
 
 
