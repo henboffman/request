@@ -28,5 +28,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="attack_type">
+      <EntityTypeMapping TypeName="requestModel.attack_type">
+        <MappingFragment StoreEntitySet="attack_type">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="damage_type">
+      <EntityTypeMapping TypeName="requestModel.damage_type">
+        <MappingFragment StoreEntitySet="damage_type">
+          <ScalarProperty Name="Attack_Type_Id" ColumnName="Attack_Type_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

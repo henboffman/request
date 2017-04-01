@@ -7,6 +7,12 @@
       <End Role="weapon_types" EntitySet="weapon_types" />
       <End Role="weapon" EntitySet="weapons" />
     </AssociationSet>
+    <EntitySet Name="attack_type" EntityType="requestModel.attack_type" />
+    <EntitySet Name="damage_type" EntityType="requestModel.damage_type" />
+    <AssociationSet Name="FK__damage_ty__Attac__1CF15040" Association="requestModel.FK__damage_ty__Attac__1CF15040">
+      <End Role="attack_type" EntitySet="attack_type" />
+      <End Role="damage_type" EntitySet="damage_type" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="weapon_types">
     <Key>
@@ -44,6 +50,35 @@
       </Principal>
       <Dependent Role="weapon">
         <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="attack_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="damage_type" Relationship="requestModel.FK__damage_ty__Attac__1CF15040" FromRole="attack_type" ToRole="damage_type" />
+  </EntityType>
+  <EntityType Name="damage_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Attack_Type_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="attack_type" Relationship="requestModel.FK__damage_ty__Attac__1CF15040" FromRole="damage_type" ToRole="attack_type" />
+  </EntityType>
+  <Association Name="FK__damage_ty__Attac__1CF15040">
+    <End Type="requestModel.attack_type" Role="attack_type" Multiplicity="1" />
+    <End Type="requestModel.damage_type" Role="damage_type" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="attack_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="damage_type">
+        <PropertyRef Name="Attack_Type_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

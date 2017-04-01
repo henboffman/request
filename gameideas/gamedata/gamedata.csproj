@@ -240,12 +240,20 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="attack_type.cs">
+      <DependentUpon>gamedata.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\attack_typeController.cs" />
+    <Compile Include="Controllers\damage_typeController.cs" />
     <Compile Include="Controllers\DurandalController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\weaponsController.cs" />
     <Compile Include="Controllers\weapon_typesController.cs" />
+    <Compile Include="damage_type.cs">
+      <DependentUpon>gamedata.tt</DependentUpon>
+    </Compile>
     <Compile Include="gamedata.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

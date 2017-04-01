@@ -5,6 +5,21 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="requestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="attack_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="damage_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Attack_Type_Id" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="weapon_types">
           <Key>
             <PropertyRef Name="id" />
@@ -30,6 +45,18 @@
           <Property Name="Weight" Type="int" Nullable="false" />
           <Property Name="Speed" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK__damage_ty__Attac__1CF15040">
+          <End Role="attack_type" Type="Self.attack_type" Multiplicity="1" />
+          <End Role="damage_type" Type="Self.damage_type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="attack_type">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="damage_type">
+              <PropertyRef Name="Attack_Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__weapons__TypeId__182C9B23">
           <End Role="weapon_types" Type="Self.weapon_types" Multiplicity="1" />
           <End Role="weapons" Type="Self.weapons" Multiplicity="*" />
@@ -43,8 +70,14 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="requestModelStoreContainer">
+          <EntitySet Name="attack_type" EntityType="Self.attack_type" Schema="requestmain" store:Type="Tables" />
+          <EntitySet Name="damage_type" EntityType="Self.damage_type" Schema="requestmain" store:Type="Tables" />
           <EntitySet Name="weapon_types" EntityType="Self.weapon_types" Schema="requestmain" store:Type="Tables" />
           <EntitySet Name="weapons" EntityType="Self.weapons" Schema="requestmain" store:Type="Tables" />
+          <AssociationSet Name="FK__damage_ty__Attac__1CF15040" Association="Self.FK__damage_ty__Attac__1CF15040">
+            <End Role="attack_type" EntitySet="attack_type" />
+            <End Role="damage_type" EntitySet="damage_type" />
+          </AssociationSet>
           <AssociationSet Name="FK__weapons__TypeId__182C9B23" Association="Self.FK__weapons__TypeId__182C9B23">
             <End Role="weapon_types" EntitySet="weapon_types" />
             <End Role="weapons" EntitySet="weapons" />
@@ -60,6 +93,12 @@
           <AssociationSet Name="FK__weapons__TypeId__182C9B23" Association="requestModel.FK__weapons__TypeId__182C9B23">
             <End Role="weapon_types" EntitySet="weapon_types" />
             <End Role="weapon" EntitySet="weapons" />
+          </AssociationSet>
+          <EntitySet Name="attack_type" EntityType="requestModel.attack_type" />
+          <EntitySet Name="damage_type" EntityType="requestModel.damage_type" />
+          <AssociationSet Name="FK__damage_ty__Attac__1CF15040" Association="requestModel.FK__damage_ty__Attac__1CF15040">
+            <End Role="attack_type" EntitySet="attack_type" />
+            <End Role="damage_type" EntitySet="damage_type" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="weapon_types">
@@ -101,6 +140,35 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="attack_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="damage_type" Relationship="requestModel.FK__damage_ty__Attac__1CF15040" FromRole="attack_type" ToRole="damage_type" />
+        </EntityType>
+        <EntityType Name="damage_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Attack_Type_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="attack_type" Relationship="requestModel.FK__damage_ty__Attac__1CF15040" FromRole="damage_type" ToRole="attack_type" />
+        </EntityType>
+        <Association Name="FK__damage_ty__Attac__1CF15040">
+          <End Type="requestModel.attack_type" Role="attack_type" Multiplicity="1" />
+          <End Type="requestModel.damage_type" Role="damage_type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="attack_type">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="damage_type">
+              <PropertyRef Name="Attack_Type_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -129,6 +197,23 @@
                 <ScalarProperty Name="Max_Damage" ColumnName="Max_Damage" />
                 <ScalarProperty Name="Max_Durability" ColumnName="Max_Durability" />
                 <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="attack_type">
+            <EntityTypeMapping TypeName="requestModel.attack_type">
+              <MappingFragment StoreEntitySet="attack_type">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="damage_type">
+            <EntityTypeMapping TypeName="requestModel.damage_type">
+              <MappingFragment StoreEntitySet="damage_type">
+                <ScalarProperty Name="Attack_Type_Id" ColumnName="Attack_Type_Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>

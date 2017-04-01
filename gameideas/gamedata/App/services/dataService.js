@@ -17,6 +17,7 @@
         return $.ajax(options);
     }
 
+    //#region weapon types
 
     function getWeaponTypes() {
         var options = {
@@ -36,9 +37,61 @@
         return $.ajax(options);
     }
 
+    //#endregion
+
+    //#region attack types
+
+    function getAttackTypes() {
+        var options = {
+            url: "api/attack_type",
+            type: "GET"
+        }
+        return $.ajax(options);
+    }
+
+    function createAttackType(attackType) {
+        var options = {
+            url: "api/attack_type",
+            type: "POST",
+            data: attackType
+        }
+
+        return $.ajax(options);
+    }
+
+    //#endregion attack types
+
+
+    //#region damage types
+
+    function getDamageTypes() {
+        var options = {
+            url: "api/damage_type",
+            type: "GET"
+        }
+        return $.ajax(options);
+    }
+
+    function createDamageType(damageType) {
+        var options = {
+            url: "api/damage_type",
+            type: "POST",
+            data: damageType
+        }
+
+        return $.ajax(options);
+    }
+
+    //#endregion damage types
+
+
     var dataService = {
+        createAttackType: createAttackType,
+        createDamageType: createDamageType,
         createWeapon:createWeapon,
-        createWeaponType:createWeaponType,
+        createWeaponType: createWeaponType,
+        getAttackTypes: getAttackTypes,
+        getDamageTypes: getDamageTypes,
         getWeapons: getWeapons,
         getWeaponTypes:getWeaponTypes
     };
