@@ -87,3 +87,4 @@ E:\Code\request\gameideas\gamedata\bin\Microsoft.Owin.Security.MicrosoftAccount.
 E:\Code\request\gameideas\gamedata\bin\System.Web.Http.Owin.xml
 E:\Code\request\gameideas\gamedata\obj\Release\gamedata.dll
 E:\Code\request\gameideas\gamedata\obj\Release\gamedata.pdb
+E:\Code\request\gameideas\gamedata\obj\Release\gamedata.csprojResolveAssemblyReference.cache
