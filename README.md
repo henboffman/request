@@ -18,7 +18,7 @@
     <li>Customization</li>
     <li>Drop rate</li>
     <li>Auction House</li>
-    <li>Display average damage of weapons for a selected type on weapon create screen</li>
+    <li>Display average damage of weapons for a selected type on weapon create screen</li>    
   </ul>
 
   <h3>Ideas</h3>
@@ -28,4 +28,17 @@
     <li>Emphasis on visual/audio of gaining experience/leveling</li>
   </ul>
 
+  <h2>Notes</h2>
+  <div>
+    <h3>Adding new tables</h3>
+    <ol>
+      <li>design table in excel</li>
+      <li>identify dependencies/foreign keys</li>
+      <li>create table in SQL</li>
+      <li>add relationships if needed</li>
+      <li>Create new scaffolded controller (webapi 2 w/ EF)</li>
+      <li>Add methods (get all, create) to dataservice</li>
+      <li>Add functionality to gamedata site</li>
+    </ol>
+  </div>
 </div>
