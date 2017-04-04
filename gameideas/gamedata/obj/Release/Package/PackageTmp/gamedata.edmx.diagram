@@ -8,6 +8,11 @@
         <EntityTypeShape EntityType="requestModel.weapon_types" Width="1.5" PointX="0.75" PointY="1.625" />
         <EntityTypeShape EntityType="requestModel.weapon" Width="1.5" PointX="3" PointY="1" />
         <AssociationConnector Association="requestModel.FK__weapons__TypeId__182C9B23" />
+        <EntityTypeShape EntityType="requestModel.attack_type" Width="1.5" PointX="5.375" PointY="1" />
+        <EntityTypeShape EntityType="requestModel.damage_type" Width="1.5" PointX="7.625" PointY="0.875" />
+        <AssociationConnector Association="requestModel.FK__damage_ty__Attac__1CF15040" />
+        <EntityTypeShape EntityType="requestModel.monster" Width="1.5" PointX="9.5" PointY="4" />
+        <AssociationConnector Association="requestModel.FK__monsters__damage__1FCDBCEB" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
