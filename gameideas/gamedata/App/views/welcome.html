@@ -5,9 +5,10 @@
             <li role="presentation" class="active"><a href="#weapons" aria-controls="weapons" role="tab" data-toggle="tab">Weapons</a></li>
             <li role="presentation"><a href="#attackTypes" aria-controls="attackTypes" role="tab" data-toggle="tab">Attack Types</a></li>
             <li role="presentation"><a href="#damageTypes" aria-controls="damageTypes" role="tab" data-toggle="tab">Damage Types</a></li>
+            <li role="presentation"><a href="#monsters" aria-controls="monsters" role="tab" data-toggle="tab">Monsters</a></li>
             <li role="presentation"><a href="#armor" aria-controls="armor" role="tab" data-toggle="tab">Armor</a></li>
             <li role="presentation"><a href="#items" aria-controls="items" role="tab" data-toggle="tab">Items</a></li>
-            <li role="presentation"><a href="#enemies" aria-controls="enemies" role="tab" data-toggle="tab">Enemies</a></li>
+            
             <li role="presentation"><a href="#environments" aria-controls="environments" role="tab" data-toggle="tab">Environments</a></li>
             <li role="presentation"><a href="#rooms" aria-controls="rooms" role="tab" data-toggle="tab">Rooms</a></li>
             
@@ -121,7 +122,50 @@
             </div>
             <div role="tabpanel" class="tab-pane" id="armor"></div>
             <div role="tabpanel" class="tab-pane" id="items"></div>
-            <div role="tabpanel" class="tab-pane" id="enemies"></div>
+            <div role="tabpanel" class="tab-pane" id="monsters">
+                <h3>Monsters</h3>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#monsterModal">Create Monster</button>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>Id</td>
+                            <td>Name</td>
+                            <!--<td>sprite</td>-->
+                            <td>damage_type_id</td>
+                            <td>level</td>
+                            <td>experience</td>
+                            <td>difficulty</td>
+                            <td>health_min</td>
+                            <td>health_max</td>
+                            <td>resistance_ice (%)</td>
+                            <td>resistance_fire (%)</td>
+                            <td>resistance_electric (%)</td>
+                            <td>resistance_poison (%)</td>
+                            <td>resistance_melee (%)</td>
+                            <td>resistance_projectile (%)</td>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: monsters">
+                        <tr>
+                            <td data-bind="text:id"></td>
+                            <td data-bind="text:Name"></td>
+                            <!--<td data-bind="text:"></td>-->
+                            <td data-bind="text:damage_type_id"></td>
+                            <td data-bind="text:level"></td>
+                            <td data-bind="text:experience"></td>
+                            <td data-bind="text:difficulty"></td>
+                            <td data-bind="text:health_min"></td>
+                            <td data-bind="text:health_max"></td>
+                            <td data-bind="text:resistance_ice"></td>
+                            <td data-bind="text:resistance_fire"></td>
+                            <td data-bind="text:resistance_electric"></td>
+                            <td data-bind="text:resistance_poison"></td>
+                            <td data-bind="text:resistance_melee"></td>
+                            <td data-bind="text:resistance_projectile"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <div role="tabpanel" class="tab-pane" id="environments"></div>
             <div role="tabpanel" class="tab-pane" id="rooms"></div>
 
@@ -285,6 +329,76 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary" data-bind="click: saveDamageType">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="monsterModal" tabindex="-1" role="dialog" aria-labelledby="monsterModal-label">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="monsterModal-label">Create Monster</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="monsterName">Monster Name</label>
+                    <input type="text" class="form-control" id="monsterName" placeholder="monster name" data-bind="value: newMonster().Name">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="damageType">Damage Type</label>
+                    <select data-bind="options: damageTypes, optionsText: 'Name', value: newMonster().damage_type_id, optionsValue: 'id'"></select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="level">Level</label>
+                    <input type="number" min="0" max="200" class="form-control" id="level" placeholder="Level" data-bind="value: newMonster().level">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="experience">Experience</label>
+                    <input type="text" class="form-control" id="experience" placeholder="Experience" data-bind="value: newMonster().experience">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="difficulty">Difficulty</label>
+                    <input type="text" class="form-control" id="difficulty" placeholder="Difficulty" data-bind="value: newMonster().difficulty">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="health_min">Health Min.</label>
+                    <input type="number" min="0" class="form-control" id="health_min" placeholder="Health Min."data-bind="value: newMonster().health_min">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="health_max">Health Max.</label>
+                    <input type="number" min="0" class="form-control" id="health_max" placeholder="Health Max." data-bind="value: newMonster().health_max">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="resistance_ice">Resistance: Ice (%)</label>
+                    <input type="number" min="0" max="100" class="form-control" id="resistance_ice" placeholder="resistance_ice" data-bind="value: newMonster().resistance_ice">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="resistance_fire">Resistance: Fire (%)</label>
+                    <input type="number" min="0" max="100" class="form-control" id="resistance_fire" placeholder="Resistance: Fire" data-bind="value: newMonster().resistance_fire">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="resistance_electric">Resistance: Electric (%)</label>
+                    <input type="number" min="0" max="100" class="form-control" id="resistance_electric" placeholder="Resistance: Electric" data-bind="value: newMonster().resistance_electric">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="resistance_poison">Resistance: Poison (%)</label>
+                    <input type="number" min="0" max="100" class="form-control" id="resistance_poison" placeholder="Resistance: Poison"data-bind="value: newMonster().resistance_poison">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="resistance_melee">Resistance: Melee (%)</label>
+                    <input type="number" min="0" max="100" class="form-control" id="resistance_melee" placeholder="Resistance: Melee"data-bind="value: newMonster().resistance_melee">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="resistance_projectile">Resistance: Projectile (%)</label>
+                    <input type="number" min="0" max="100" class="form-control" id="resistance_projectile" placeholder="Resistance: Projectile"data-bind="value: newMonster().resistance_projectile">
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-bind="click: saveMonster">Save</button>
             </div>
         </div>
     </div>

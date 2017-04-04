@@ -29,5 +29,6 @@ namespace gamedata
         public virtual DbSet<weapon> weapons { get; set; }
         public virtual DbSet<attack_type> attack_type { get; set; }
         public virtual DbSet<damage_type> damage_type { get; set; }
+        public virtual DbSet<monster> monsters { get; set; }
     }
 }

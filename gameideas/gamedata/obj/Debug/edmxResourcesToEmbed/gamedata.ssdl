@@ -15,6 +15,25 @@
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Attack_Type_Id" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="monsters">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="damage_type_id" Type="int" Nullable="false" />
+    <Property Name="level" Type="int" Nullable="false" />
+    <Property Name="experience" Type="int" Nullable="false" />
+    <Property Name="difficulty" Type="int" Nullable="false" />
+    <Property Name="health_min" Type="int" Nullable="false" />
+    <Property Name="health_max" Type="int" Nullable="false" />
+    <Property Name="resistance_ice" Type="int" Nullable="false" />
+    <Property Name="resistance_fire" Type="int" Nullable="false" />
+    <Property Name="resistance_electric" Type="int" Nullable="false" />
+    <Property Name="resistance_poison" Type="int" Nullable="false" />
+    <Property Name="resistance_melee" Type="int" Nullable="false" />
+    <Property Name="resistance_projectile" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="weapon_types">
     <Key>
       <PropertyRef Name="id" />
@@ -52,6 +71,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__monsters__damage__1FCDBCEB">
+    <End Role="damage_type" Type="Self.damage_type" Multiplicity="1" />
+    <End Role="monsters" Type="Self.monsters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="damage_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="monsters">
+        <PropertyRef Name="damage_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__weapons__TypeId__182C9B23">
     <End Role="weapon_types" Type="Self.weapon_types" Multiplicity="1" />
     <End Role="weapons" Type="Self.weapons" Multiplicity="*" />
@@ -67,11 +98,16 @@
   <EntityContainer Name="requestModelStoreContainer">
     <EntitySet Name="attack_type" EntityType="Self.attack_type" Schema="requestmain" store:Type="Tables" />
     <EntitySet Name="damage_type" EntityType="Self.damage_type" Schema="requestmain" store:Type="Tables" />
+    <EntitySet Name="monsters" EntityType="Self.monsters" Schema="requestmain" store:Type="Tables" />
     <EntitySet Name="weapon_types" EntityType="Self.weapon_types" Schema="requestmain" store:Type="Tables" />
     <EntitySet Name="weapons" EntityType="Self.weapons" Schema="requestmain" store:Type="Tables" />
     <AssociationSet Name="FK__damage_ty__Attac__1CF15040" Association="Self.FK__damage_ty__Attac__1CF15040">
       <End Role="attack_type" EntitySet="attack_type" />
       <End Role="damage_type" EntitySet="damage_type" />
+    </AssociationSet>
+    <AssociationSet Name="FK__monsters__damage__1FCDBCEB" Association="Self.FK__monsters__damage__1FCDBCEB">
+      <End Role="damage_type" EntitySet="damage_type" />
+      <End Role="monsters" EntitySet="monsters" />
     </AssociationSet>
     <AssociationSet Name="FK__weapons__TypeId__182C9B23" Association="Self.FK__weapons__TypeId__182C9B23">
       <End Role="weapon_types" EntitySet="weapon_types" />

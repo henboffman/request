@@ -7,11 +7,13 @@
     var damageTypes = ko.observableArray();
     var newDamageType = ko.observable();
 
-
     var newWeapon = ko.observable();
     var newWeaponType = ko.observable();
     var weapons = ko.observableArray([]);
     var weaponTypes = ko.observableArray([]);
+
+    var monsters = ko.observableArray([]);
+    var newMonster = ko.observable();
 
     var AttackType = function () {
         var self = this;
@@ -24,7 +26,26 @@
         self.Name = "";
         self.id = 0;
         self.Attack_Type_Id = 0;
-    }
+    };
+
+    var Monster = function () {
+        var self = this;
+        self.id = 0;
+        self.Name = "";
+        //self.Sprite = "";
+        self.damage_type_id=null;
+        self.level=null;
+        self.experience=null;
+        self.difficulty=null;
+        self.health_min=null;
+        self.health_max=null;
+        self.resistance_ice=null;
+        self.resistance_fire=null;
+        self.resistance_electric=null;
+        self.resistance_poison=null;
+        self.resistance_melee=null;
+        self.resistance_projectile=null;
+    };
 
     var WeaponType = function () {
         var self = this;
@@ -187,18 +208,51 @@
     //#endregion
 
 
+
+    //#region monsters
+
+    function getMonsters() {
+        return dataService.getMonsters().then(function (returnedMonsters) {
+            console.log(returnedMonsters);
+            monsters(returnedMonsters);
+        });
+    }
+
+    function saveMonster() {
+        console.log(newMonster());
+        var isValid = true;
+        for (var property in newMonster()) {            
+            if (newMonster()[property] == null) {
+                isValid = false;
+                console.error("Monster is not valid: not all fields populated");
+            }
+        }
+        if (newMonster().Name != "" && isValid) {
+            return dataService.createMonster(newMonster()).then(function (savedMonster) {
+                monsters.push(savedMonster);
+                $('#monsterModal').modal('hide');
+                newMonster(new Monster());
+            })
+        }
+    }
+
+    //#endregion
+
+
     function activate() {
         if (initialized) return initialized;
 
         //initialize arrays
         getAttackTypes();
         getDamageTypes();
+        getMonsters();
         getWeapons();
         getWeaponTypes();
 
         //initialize new Items
         newAttackType(new AttackType());
         newDamageType(new DamageType());
+        newMonster(new Monster());
         newWeapon(new Weapon());
         newWeaponType(new WeaponType());
 
@@ -211,12 +265,15 @@
         attackTypes: attackTypes,
         damageTypes: damageTypes,        
         getWeapons: getWeapons,
+        monsters:monsters,
         newAttackType: newAttackType,
         newDamageType: newDamageType,
+        newMonster:newMonster,
         newWeapon: newWeapon,
         newWeaponType: newWeaponType,
         saveAttackType: saveAttackType,
-        saveDamageType:saveDamageType,
+        saveDamageType: saveDamageType,
+        saveMonster:saveMonster,
         saveWeapon: saveWeapon,
         saveWeaponType:saveWeaponType,
         weapons: weapons,

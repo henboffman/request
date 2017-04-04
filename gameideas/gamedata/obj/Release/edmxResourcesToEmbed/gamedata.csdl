@@ -7,6 +7,17 @@
       <End Role="weapon_types" EntitySet="weapon_types" />
       <End Role="weapon" EntitySet="weapons" />
     </AssociationSet>
+    <EntitySet Name="attack_type" EntityType="requestModel.attack_type" />
+    <EntitySet Name="damage_type" EntityType="requestModel.damage_type" />
+    <AssociationSet Name="FK__damage_ty__Attac__1CF15040" Association="requestModel.FK__damage_ty__Attac__1CF15040">
+      <End Role="attack_type" EntitySet="attack_type" />
+      <End Role="damage_type" EntitySet="damage_type" />
+    </AssociationSet>
+    <EntitySet Name="monsters" EntityType="requestModel.monster" />
+    <AssociationSet Name="FK__monsters__damage__1FCDBCEB" Association="requestModel.FK__monsters__damage__1FCDBCEB">
+      <End Role="damage_type" EntitySet="damage_type" />
+      <End Role="monster" EntitySet="monsters" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="weapon_types">
     <Key>
@@ -44,6 +55,68 @@
       </Principal>
       <Dependent Role="weapon">
         <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="attack_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="damage_type" Relationship="requestModel.FK__damage_ty__Attac__1CF15040" FromRole="attack_type" ToRole="damage_type" />
+  </EntityType>
+  <EntityType Name="damage_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Attack_Type_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="attack_type" Relationship="requestModel.FK__damage_ty__Attac__1CF15040" FromRole="damage_type" ToRole="attack_type" />
+    <NavigationProperty Name="monsters" Relationship="requestModel.FK__monsters__damage__1FCDBCEB" FromRole="damage_type" ToRole="monster" />
+  </EntityType>
+  <Association Name="FK__damage_ty__Attac__1CF15040">
+    <End Type="requestModel.attack_type" Role="attack_type" Multiplicity="1" />
+    <End Type="requestModel.damage_type" Role="damage_type" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="attack_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="damage_type">
+        <PropertyRef Name="Attack_Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="monster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="damage_type_id" Type="Int32" Nullable="false" />
+    <Property Name="level" Type="Int32" Nullable="false" />
+    <Property Name="experience" Type="Int32" Nullable="false" />
+    <Property Name="difficulty" Type="Int32" Nullable="false" />
+    <Property Name="health_min" Type="Int32" Nullable="false" />
+    <Property Name="health_max" Type="Int32" Nullable="false" />
+    <Property Name="resistance_ice" Type="Int32" Nullable="false" />
+    <Property Name="resistance_fire" Type="Int32" Nullable="false" />
+    <Property Name="resistance_electric" Type="Int32" Nullable="false" />
+    <Property Name="resistance_poison" Type="Int32" Nullable="false" />
+    <Property Name="resistance_melee" Type="Int32" Nullable="false" />
+    <Property Name="resistance_projectile" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="damage_type" Relationship="requestModel.FK__monsters__damage__1FCDBCEB" FromRole="monster" ToRole="damage_type" />
+  </EntityType>
+  <Association Name="FK__monsters__damage__1FCDBCEB">
+    <End Type="requestModel.damage_type" Role="damage_type" Multiplicity="1" />
+    <End Type="requestModel.monster" Role="monster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="damage_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="monster">
+        <PropertyRef Name="damage_type_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

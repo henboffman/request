@@ -36,6 +36,7 @@
       <li>identify dependencies/foreign keys</li>
       <li>create table in SQL</li>
       <li>add relationships if needed</li>
+      <li>update edmx model</li>
       <li>Create new scaffolded controller (webapi 2 w/ EF)</li>
       <li>Add methods (get all, create) to dataservice</li>
       <li>Add functionality to gamedata site</li>

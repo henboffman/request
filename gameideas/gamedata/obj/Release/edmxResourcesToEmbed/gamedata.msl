@@ -28,5 +28,42 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="attack_type">
+      <EntityTypeMapping TypeName="requestModel.attack_type">
+        <MappingFragment StoreEntitySet="attack_type">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="damage_type">
+      <EntityTypeMapping TypeName="requestModel.damage_type">
+        <MappingFragment StoreEntitySet="damage_type">
+          <ScalarProperty Name="Attack_Type_Id" ColumnName="Attack_Type_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="monsters">
+      <EntityTypeMapping TypeName="requestModel.monster">
+        <MappingFragment StoreEntitySet="monsters">
+          <ScalarProperty Name="resistance_projectile" ColumnName="resistance_projectile" />
+          <ScalarProperty Name="resistance_melee" ColumnName="resistance_melee" />
+          <ScalarProperty Name="resistance_poison" ColumnName="resistance_poison" />
+          <ScalarProperty Name="resistance_electric" ColumnName="resistance_electric" />
+          <ScalarProperty Name="resistance_fire" ColumnName="resistance_fire" />
+          <ScalarProperty Name="resistance_ice" ColumnName="resistance_ice" />
+          <ScalarProperty Name="health_max" ColumnName="health_max" />
+          <ScalarProperty Name="health_min" ColumnName="health_min" />
+          <ScalarProperty Name="difficulty" ColumnName="difficulty" />
+          <ScalarProperty Name="experience" ColumnName="experience" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="damage_type_id" ColumnName="damage_type_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
