@@ -175,6 +175,5 @@ E:\Code\request\gameideas\gamedata\bin\Microsoft.Owin.Security.Google.xml
 E:\Code\request\gameideas\gamedata\bin\Microsoft.Owin.Security.Twitter.xml
 E:\Code\request\gameideas\gamedata\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\Code\request\gameideas\gamedata\bin\System.Web.Http.Owin.xml
-E:\Code\request\gameideas\gamedata\obj\Debug\gamedata.csprojResolveAssemblyReference.cache
 E:\Code\request\gameideas\gamedata\obj\Debug\gamedata.dll
 E:\Code\request\gameideas\gamedata\obj\Debug\gamedata.pdb
