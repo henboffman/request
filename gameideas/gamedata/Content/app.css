@@ -6,3 +6,11 @@
     overflow-y:auto;
     max-height:600px;
 }
+
+.dataTableInput{
+    width:100%;
+}
+
+.dataTableIdField{
+    width:5%;
+}
