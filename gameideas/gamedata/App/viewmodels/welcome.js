@@ -68,14 +68,15 @@
         self.Name = "";
         self.id = 0;
         self.TypeId = 0;
-        self.Max_Durability = 0;
-        self.Min_Durability = 0;
+        //self.Max_Durability = 0;
+        //self.Min_Durability = 0;
         self.Max_Damage = 0;
         self.Min_Damage = 0;
         self.Max_Value = 0;
         self.Min_Value = 0;
         self.Weight = 0;
         self.Speed = 0;
+        self.item_rarity_id = 0;
     };
 
     //#region Weapons
