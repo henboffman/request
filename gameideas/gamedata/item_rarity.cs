@@ -12,20 +12,19 @@ namespace gamedata
     using System;
     using System.Collections.Generic;
     
-    public partial class weapon
+    public partial class item_rarity
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public item_rarity()
+        {
+            this.weapons = new HashSet<weapon>();
+        }
+    
         public int id { get; set; }
         public string Name { get; set; }
-        public int TypeId { get; set; }
-        public int Max_Damage { get; set; }
-        public int Max_Value { get; set; }
-        public int Min_Damage { get; set; }
-        public int Min_Value { get; set; }
-        public int Weight { get; set; }
-        public int Speed { get; set; }
-        public int item_rarity_id { get; set; }
+        public string Color { get; set; }
     
-        public virtual weapon_types weapon_types { get; set; }
-        public virtual item_rarity item_rarity { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<weapon> weapons { get; set; }
     }
 }

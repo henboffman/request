@@ -12,6 +12,8 @@
     var newWeapon = ko.observable();    
     var weapons = ko.observableArray([]);    
     var createNewWeapon = ko.observable(false);
+    var testWeapons = ko.observableArray([]);
+    
 
     var newWeaponType = ko.observable();
     var weaponTypes = ko.observableArray([]);
@@ -137,6 +139,19 @@
             
         }        
     }
+
+    //#region test methods - weapon
+
+    function spawnWeapon() {
+        return dataService.spawnWeapon().then(function (returnedWeapon) {
+            console.log(returnedWeapon);
+            testWeapons.push(returnedWeapon);
+        })
+
+    }
+
+
+    //#endregion
 
     //#endregion
 
@@ -319,11 +334,13 @@
         newMonster:newMonster,
         newWeapon: newWeapon,
         newWeaponType: newWeaponType,
+        spawnWeapon:spawnWeapon,
         saveAttackType: saveAttackType,
         saveDamageType: saveDamageType,
         saveMonster:saveMonster,
         saveWeapon: saveWeapon,
         saveWeaponType: saveWeaponType,
+        testWeapons: testWeapons,
         toggleCreateAttackType:toggleCreateAttackType,
         toggleCreateDamageType: toggleCreateDamageType,
         toggleCreateMonster: toggleCreateMonster,

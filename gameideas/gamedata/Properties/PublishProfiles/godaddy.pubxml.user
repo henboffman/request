@@ -23,7 +23,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2017 21:07:26</publishTime>
     </File>
     <File Include="App/viewmodels/welcome.js">
-      <publishTime>04/03/2017 20:13:14</publishTime>
+      <publishTime>04/05/2017 18:40:48</publishTime>
     </File>
     <File Include="App/views/detail.html">
       <publishTime>03/30/2017 19:28:29</publishTime>
@@ -35,7 +35,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2017 21:12:08</publishTime>
     </File>
     <File Include="App/views/welcome.html">
-      <publishTime>04/03/2017 20:13:17</publishTime>
+      <publishTime>04/05/2017 18:49:01</publishTime>
     </File>
     <File Include="ApplicationInsights.config">
       <publishTime>03/30/2017 19:05:44</publishTime>
@@ -113,7 +113,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2015 08:32:26</publishTime>
     </File>
     <File Include="bin/gamedata.dll">
-      <publishTime>04/03/2017 20:13:28</publishTime>
+      <publishTime>04/05/2017 18:49:52</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
       <publishTime>11/30/2016 16:07:42</publishTime>
@@ -260,7 +260,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/10/2013 17:28:38</publishTime>
     </File>
     <File Include="Content/app.css">
-      <publishTime>04/01/2017 00:33:47</publishTime>
+      <publishTime>04/05/2017 18:33:52</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.css">
       <publishTime>03/30/2017 19:28:25</publishTime>
@@ -284,10 +284,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2017 19:28:28</publishTime>
     </File>
     <File Include="Content/font-awesome.css">
-      <publishTime>03/30/2017 19:28:24</publishTime>
+      <publishTime>04/05/2017 18:07:03</publishTime>
     </File>
     <File Include="Content/font-awesome.min.css">
-      <publishTime>03/30/2017 19:28:24</publishTime>
+      <publishTime>04/05/2017 18:07:03</publishTime>
     </File>
     <File Include="Content/ie10mobile.css">
       <publishTime>03/30/2017 19:28:29</publishTime>
@@ -311,19 +311,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2017 19:05:32</publishTime>
     </File>
     <File Include="fonts/fontawesome-webfont.eot">
-      <publishTime>03/30/2017 19:28:24</publishTime>
+      <publishTime>04/05/2017 18:07:03</publishTime>
     </File>
     <File Include="fonts/fontawesome-webfont.svg">
-      <publishTime>03/30/2017 19:28:24</publishTime>
+      <publishTime>04/05/2017 18:07:03</publishTime>
     </File>
     <File Include="fonts/fontawesome-webfont.ttf">
-      <publishTime>03/30/2017 19:28:24</publishTime>
+      <publishTime>04/05/2017 18:07:03</publishTime>
     </File>
     <File Include="fonts/fontawesome-webfont.woff">
-      <publishTime>03/30/2017 19:28:24</publishTime>
+      <publishTime>04/05/2017 18:07:03</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.woff2">
+      <publishTime>04/05/2017 18:07:03</publishTime>
     </File>
     <File Include="fonts/FontAwesome.otf">
-      <publishTime>03/30/2017 19:28:24</publishTime>
+      <publishTime>04/05/2017 18:07:03</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.eot">
       <publishTime>03/30/2017 19:28:25</publishTime>
@@ -344,7 +347,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2017 19:05:32</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>03/30/2017 19:28:29</publishTime>
+      <publishTime>04/05/2017 18:07:03</publishTime>
     </File>
     <File Include="readme.md">
       <publishTime>03/30/2017 19:28:29</publishTime>
@@ -482,7 +485,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2017 19:05:32</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/30/2017 21:08:07</publishTime>
+      <publishTime>04/05/2017 18:49:56</publishTime>
     </File>
   </ItemGroup>
 </Project>

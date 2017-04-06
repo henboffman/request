@@ -13,6 +13,7 @@ using gamedata;
 
 namespace gamedata.Controllers
 {
+    [RoutePrefix("api/weapons")]
     public class weaponsController : ApiController
     {
         private requestEntities db = new requestEntities();
@@ -21,6 +22,20 @@ namespace gamedata.Controllers
         public IQueryable<weapon> Getweapons()
         {
             return db.weapons;
+        }
+
+        [HttpGet]
+        [Route("spawnWeapon")]
+        public weapon SpawnWeapon()
+        {
+            //get random weapon from database
+            var weaponCount = db.weapons.Count();
+            Random random = new Random();
+            int itemId = random.Next(1, weaponCount);
+
+            weapon returnedWeapon = db.weapons.Find(itemId);
+            return returnedWeapon;
+
         }
 
         // GET: api/weapons/5

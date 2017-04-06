@@ -8,6 +8,14 @@
         return $.ajax(options);
     }
 
+    function spawnWeapon() {
+        var options = {
+            url: "api/weapons/spawnWeapon",
+            type: "GET"
+        }
+        return $.ajax(options);
+    }
+
     function createWeapon(weapon) {
         var options = {
             url: "api/weapons",
@@ -118,7 +126,8 @@
         getDamageTypes: getDamageTypes,
         getMonsters:getMonsters,
         getWeapons: getWeapons,
-        getWeaponTypes:getWeaponTypes
+        getWeaponTypes: getWeaponTypes,
+        spawnWeapon: spawnWeapon
     };
 
     return dataService;

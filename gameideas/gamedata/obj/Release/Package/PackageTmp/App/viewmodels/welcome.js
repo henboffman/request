@@ -3,17 +3,23 @@
     var initialized = false;
     var attackTypes = ko.observableArray();
     var newAttackType = ko.observable();
+    var createNewAttackType = ko.observable(false);
 
     var damageTypes = ko.observableArray();
     var newDamageType = ko.observable();
+    var createNewDamageType = ko.observable(false);
 
-    var newWeapon = ko.observable();
+    var newWeapon = ko.observable();    
+    var weapons = ko.observableArray([]);    
+    var createNewWeapon = ko.observable(false);
+
     var newWeaponType = ko.observable();
-    var weapons = ko.observableArray([]);
     var weaponTypes = ko.observableArray([]);
+    var createNewWeaponType = ko.observable(false);
 
     var monsters = ko.observableArray([]);
     var newMonster = ko.observable();
+    var createNewMonster = ko.observable(false);
 
     var AttackType = function () {
         var self = this;
@@ -72,6 +78,14 @@
 
     //#region Weapons
 
+    function toggleCreateWeapon() {
+        createNewWeapon(!createNewWeapon());
+        //reset the weapon fields if discarded
+        if (!createNewWeapon()){
+            newWeapon(new Weapon());
+        }
+    }
+
     function getWeapons() {
         return dataService.getWeapons().then(function (returnedWeapons) {
             console.log(returnedWeapons);
@@ -128,6 +142,13 @@
 
     //#region Weapon Types
 
+    function toggleCreateWeaponType(){
+        createNewWeaponType(!createNewWeaponType());
+        if (!createNewWeaponType()) {
+            newWeaponType(new WeaponType());
+        }
+    }
+
     function getWeaponTypes(){
         return dataService.getWeaponTypes().then(function (returnedWeaponTypes) {
             console.log(returnedWeaponTypes);
@@ -165,6 +186,13 @@
 
     //#region attack types
 
+    function toggleCreateAttackType() {
+        createNewAttackType(!createNewAttackType());
+        if (!createNewAttackType()) {
+            newAttackType(new AttackType());
+        }
+    }
+
     function getAttackTypes() {
         return dataService.getAttackTypes().then(function (returnedAttackTypes) {
             console.log(returnedAttackTypes);
@@ -186,6 +214,14 @@
     //#endregion
 
     //#region damage types
+
+    function toggleCreateDamageType() {
+        createNewDamageType(!createNewDamageType());
+        if (!createNewDamageType()) {
+            newDamageType(new DamageType());
+        }
+    }
+
 
     function getDamageTypes() {
         return dataService.getDamageTypes().then(function (returnedDamageTypes) {
@@ -210,6 +246,13 @@
 
 
     //#region monsters
+
+    function toggleCreateMonster() {
+        createNewMonster(!createNewMonster());
+        if (!createNewMonster()) {
+            newMonster(new Monster());
+        }
+    }
 
     function getMonsters() {
         return dataService.getMonsters().then(function (returnedMonsters) {
@@ -263,6 +306,11 @@
     var home = {
         activate: activate,
         attackTypes: attackTypes,
+        createNewAttackType:createNewAttackType,
+        createNewDamageType: createNewDamageType,
+        createNewMonster:createNewMonster,
+        createNewWeapon: createNewWeapon,
+        createNewWeaponType :createNewWeaponType ,
         damageTypes: damageTypes,        
         getWeapons: getWeapons,
         monsters:monsters,
@@ -275,7 +323,12 @@
         saveDamageType: saveDamageType,
         saveMonster:saveMonster,
         saveWeapon: saveWeapon,
-        saveWeaponType:saveWeaponType,
+        saveWeaponType: saveWeaponType,
+        toggleCreateAttackType:toggleCreateAttackType,
+        toggleCreateDamageType: toggleCreateDamageType,
+        toggleCreateMonster: toggleCreateMonster,
+        toggleCreateWeapon: toggleCreateWeapon,
+        toggleCreateWeaponType:toggleCreateWeaponType,
         weapons: weapons,
         weaponTypes:weaponTypes
     };

@@ -18,6 +18,11 @@
       <End Role="damage_type" EntitySet="damage_type" />
       <End Role="monster" EntitySet="monsters" />
     </AssociationSet>
+    <EntitySet Name="item_rarity" EntityType="requestModel.item_rarity" />
+    <AssociationSet Name="FK__weapons__item_ra__24927208" Association="requestModel.FK__weapons__item_ra__24927208">
+      <End Role="item_rarity" EntitySet="item_rarity" />
+      <End Role="weapon" EntitySet="weapons" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="weapon_types">
     <Key>
@@ -36,15 +41,15 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="TypeId" Type="Int32" Nullable="false" />
-    <Property Name="Max_Durability" Type="Int32" Nullable="false" />
     <Property Name="Max_Damage" Type="Int32" Nullable="false" />
     <Property Name="Max_Value" Type="Int32" Nullable="false" />
-    <Property Name="Min_Durability" Type="Int32" Nullable="false" />
     <Property Name="Min_Damage" Type="Int32" Nullable="false" />
     <Property Name="Min_Value" Type="Int32" Nullable="false" />
     <Property Name="Weight" Type="Int32" Nullable="false" />
     <Property Name="Speed" Type="Int32" Nullable="false" />
     <NavigationProperty Name="weapon_types" Relationship="requestModel.FK__weapons__TypeId__182C9B23" FromRole="weapon" ToRole="weapon_types" />
+    <Property Name="item_rarity_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="item_rarity" Relationship="requestModel.FK__weapons__item_ra__24927208" FromRole="weapon" ToRole="item_rarity" />
   </EntityType>
   <Association Name="FK__weapons__TypeId__182C9B23">
     <End Type="requestModel.weapon_types" Role="weapon_types" Multiplicity="1" />
@@ -117,6 +122,27 @@
       </Principal>
       <Dependent Role="monster">
         <PropertyRef Name="damage_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="item_rarity">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Color" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="weapons" Relationship="requestModel.FK__weapons__item_ra__24927208" FromRole="item_rarity" ToRole="weapon" />
+  </EntityType>
+  <Association Name="FK__weapons__item_ra__24927208">
+    <End Type="requestModel.item_rarity" Role="item_rarity" Multiplicity="1" />
+    <End Type="requestModel.weapon" Role="weapon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="item_rarity">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="weapon">
+        <PropertyRef Name="item_rarity_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

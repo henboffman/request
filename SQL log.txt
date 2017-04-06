@@ -1,0 +1,18 @@
+--alter table weapons 
+--add Foreign Key (TypeId)
+--references weapon_types(id)
+
+--alter table damage_type 
+--add Foreign Key (Attack_Type_Id)
+--references attack_type(id)
+
+--alter table monsters 
+--add Foreign Key (damage_type_id)
+--references damage_type(id)
+
+--alter table weapons
+--add item_rarity_id INT NOT NULL DEFAULT '0'
+
+alter table weapons 
+add Foreign Key (item_rarity_id)
+references item_rarity(id)
