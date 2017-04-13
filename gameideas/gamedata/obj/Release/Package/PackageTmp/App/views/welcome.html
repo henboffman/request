@@ -83,6 +83,44 @@
                     </div>
                 </div>
 
+                <button data-bind="click: spawnWeapon">Test Drop</button>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td class="dataTableIdField">ID</td>
+                                <td>Name</td>
+                                <td>Type</td>
+                                <td>Speed</td>
+                                <td>Weight</td>
+                                <!--<td>Min. Durability</td>
+                                <td>Max. Durability</td>-->
+                                <td>Min. Damage</td>
+                                <td>Max. Damage</td>
+                                <td>Min. Value</td>
+                                <td>Max. Value</td>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: testWeapons">
+                            <tr>
+                                <td data-bind="text:id"></td>
+                                <td data-bind="text:Name"></td>
+                                <!--ko if: weapon_types != undefined-->
+                                <td data-bind="text:weapon_types.Name"></td>
+                                <!--/ko-->                                
+                                <td data-bind="text:Speed"></td>
+                                <td data-bind="text:Weight"></td>
+                                <!--<td data-bind="text:Min_Durability"></td>
+                                <td data-bind="text:Max_Durability"></td>-->
+                                <td data-bind="text:Min_Damage"></td>
+                                <td data-bind="text:Max_Damage"></td>
+                                <td data-bind="text:Min_Value"></td>
+                                <td data-bind="text:Max_Value"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
             <div role="tabpanel" class="tab-pane" id="weaponTypes">
                 <h3>Weapon Types</h3>

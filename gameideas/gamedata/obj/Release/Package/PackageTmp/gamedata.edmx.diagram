@@ -13,6 +13,8 @@
         <AssociationConnector Association="requestModel.FK__damage_ty__Attac__1CF15040" />
         <EntityTypeShape EntityType="requestModel.monster" Width="1.5" PointX="9.5" PointY="4" />
         <AssociationConnector Association="requestModel.FK__monsters__damage__1FCDBCEB" />
+        <EntityTypeShape EntityType="requestModel.item_rarity" Width="1.5" PointX="0.75" PointY="5.875" />
+        <AssociationConnector Association="requestModel.FK__weapons__item_ra__24927208" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

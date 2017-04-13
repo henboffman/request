@@ -15,6 +15,14 @@
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Attack_Type_Id" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="item_rarity">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <EntityType Name="monsters">
     <Key>
       <PropertyRef Name="id" />
@@ -50,14 +58,13 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="TypeId" Type="int" Nullable="false" />
-    <Property Name="Max_Durability" Type="int" Nullable="false" />
     <Property Name="Max_Damage" Type="int" Nullable="false" />
     <Property Name="Max_Value" Type="int" Nullable="false" />
-    <Property Name="Min_Durability" Type="int" Nullable="false" />
     <Property Name="Min_Damage" Type="int" Nullable="false" />
     <Property Name="Min_Value" Type="int" Nullable="false" />
     <Property Name="Weight" Type="int" Nullable="false" />
     <Property Name="Speed" Type="int" Nullable="false" />
+    <Property Name="item_rarity_id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK__damage_ty__Attac__1CF15040">
     <End Role="attack_type" Type="Self.attack_type" Multiplicity="1" />
@@ -83,6 +90,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__weapons__item_ra__24927208">
+    <End Role="item_rarity" Type="Self.item_rarity" Multiplicity="1" />
+    <End Role="weapons" Type="Self.weapons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="item_rarity">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="weapons">
+        <PropertyRef Name="item_rarity_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__weapons__TypeId__182C9B23">
     <End Role="weapon_types" Type="Self.weapon_types" Multiplicity="1" />
     <End Role="weapons" Type="Self.weapons" Multiplicity="*" />
@@ -98,6 +117,7 @@
   <EntityContainer Name="requestModelStoreContainer">
     <EntitySet Name="attack_type" EntityType="Self.attack_type" Schema="requestmain" store:Type="Tables" />
     <EntitySet Name="damage_type" EntityType="Self.damage_type" Schema="requestmain" store:Type="Tables" />
+    <EntitySet Name="item_rarity" EntityType="Self.item_rarity" Schema="requestmain" store:Type="Tables" />
     <EntitySet Name="monsters" EntityType="Self.monsters" Schema="requestmain" store:Type="Tables" />
     <EntitySet Name="weapon_types" EntityType="Self.weapon_types" Schema="requestmain" store:Type="Tables" />
     <EntitySet Name="weapons" EntityType="Self.weapons" Schema="requestmain" store:Type="Tables" />
@@ -108,6 +128,10 @@
     <AssociationSet Name="FK__monsters__damage__1FCDBCEB" Association="Self.FK__monsters__damage__1FCDBCEB">
       <End Role="damage_type" EntitySet="damage_type" />
       <End Role="monsters" EntitySet="monsters" />
+    </AssociationSet>
+    <AssociationSet Name="FK__weapons__item_ra__24927208" Association="Self.FK__weapons__item_ra__24927208">
+      <End Role="item_rarity" EntitySet="item_rarity" />
+      <End Role="weapons" EntitySet="weapons" />
     </AssociationSet>
     <AssociationSet Name="FK__weapons__TypeId__182C9B23" Association="Self.FK__weapons__TypeId__182C9B23">
       <End Role="weapon_types" EntitySet="weapon_types" />

@@ -14,7 +14,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2017 21:07:46</publishTime>
     </File>
     <File Include="App/services/dataService.js">
-      <publishTime>04/03/2017 19:06:04</publishTime>
+      <publishTime>04/05/2017 19:48:14</publishTime>
     </File>
     <File Include="App/viewmodels/flickr.js">
       <publishTime>03/30/2017 19:28:29</publishTime>
@@ -23,7 +23,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2017 21:07:26</publishTime>
     </File>
     <File Include="App/viewmodels/welcome.js">
-      <publishTime>04/05/2017 18:40:48</publishTime>
+      <publishTime>04/05/2017 20:46:20</publishTime>
     </File>
     <File Include="App/views/detail.html">
       <publishTime>03/30/2017 19:28:29</publishTime>
@@ -35,7 +35,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2017 21:12:08</publishTime>
     </File>
     <File Include="App/views/welcome.html">
-      <publishTime>04/05/2017 18:49:01</publishTime>
+      <publishTime>04/05/2017 20:46:30</publishTime>
     </File>
     <File Include="ApplicationInsights.config">
       <publishTime>03/30/2017 19:05:44</publishTime>
@@ -113,7 +113,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2015 08:32:26</publishTime>
     </File>
     <File Include="bin/gamedata.dll">
-      <publishTime>04/05/2017 18:49:52</publishTime>
+      <publishTime>04/05/2017 20:47:08</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
       <publishTime>11/30/2016 16:07:42</publishTime>
@@ -341,7 +341,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2017 19:28:25</publishTime>
     </File>
     <File Include="gamedata.edmx.diagram">
-      <publishTime>04/03/2017 19:03:52</publishTime>
+      <publishTime>04/05/2017 20:41:53</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>03/30/2017 19:05:32</publishTime>

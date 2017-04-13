@@ -12,6 +12,8 @@
     var newWeapon = ko.observable();    
     var weapons = ko.observableArray([]);    
     var createNewWeapon = ko.observable(false);
+    var testWeapons = ko.observableArray([]);
+    
 
     var newWeaponType = ko.observable();
     var weaponTypes = ko.observableArray([]);
@@ -66,14 +68,15 @@
         self.Name = "";
         self.id = 0;
         self.TypeId = 0;
-        self.Max_Durability = 0;
-        self.Min_Durability = 0;
+        //self.Max_Durability = 0;
+        //self.Min_Durability = 0;
         self.Max_Damage = 0;
         self.Min_Damage = 0;
         self.Max_Value = 0;
         self.Min_Value = 0;
         self.Weight = 0;
         self.Speed = 0;
+        self.item_rarity_id = 0;
     };
 
     //#region Weapons
@@ -137,6 +140,19 @@
             
         }        
     }
+
+    //#region test methods - weapon
+
+    function spawnWeapon() {
+        return dataService.spawnWeapon().then(function (returnedWeapon) {
+            console.log(returnedWeapon);
+            testWeapons.push(returnedWeapon);
+        })
+
+    }
+
+
+    //#endregion
 
     //#endregion
 
@@ -319,11 +335,13 @@
         newMonster:newMonster,
         newWeapon: newWeapon,
         newWeaponType: newWeaponType,
+        spawnWeapon:spawnWeapon,
         saveAttackType: saveAttackType,
         saveDamageType: saveDamageType,
         saveMonster:saveMonster,
         saveWeapon: saveWeapon,
         saveWeaponType: saveWeaponType,
+        testWeapons: testWeapons,
         toggleCreateAttackType:toggleCreateAttackType,
         toggleCreateDamageType: toggleCreateDamageType,
         toggleCreateMonster: toggleCreateMonster,

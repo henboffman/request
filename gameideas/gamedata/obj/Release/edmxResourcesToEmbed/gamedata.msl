@@ -14,14 +14,13 @@
     <EntitySetMapping Name="weapons">
       <EntityTypeMapping TypeName="requestModel.weapon">
         <MappingFragment StoreEntitySet="weapons">
+          <ScalarProperty Name="item_rarity_id" ColumnName="item_rarity_id" />
           <ScalarProperty Name="Speed" ColumnName="Speed" />
           <ScalarProperty Name="Weight" ColumnName="Weight" />
           <ScalarProperty Name="Min_Value" ColumnName="Min_Value" />
           <ScalarProperty Name="Min_Damage" ColumnName="Min_Damage" />
-          <ScalarProperty Name="Min_Durability" ColumnName="Min_Durability" />
           <ScalarProperty Name="Max_Value" ColumnName="Max_Value" />
           <ScalarProperty Name="Max_Damage" ColumnName="Max_Damage" />
-          <ScalarProperty Name="Max_Durability" ColumnName="Max_Durability" />
           <ScalarProperty Name="TypeId" ColumnName="TypeId" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="id" ColumnName="id" />
@@ -60,6 +59,15 @@
           <ScalarProperty Name="experience" ColumnName="experience" />
           <ScalarProperty Name="level" ColumnName="level" />
           <ScalarProperty Name="damage_type_id" ColumnName="damage_type_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="item_rarity">
+      <EntityTypeMapping TypeName="requestModel.item_rarity">
+        <MappingFragment StoreEntitySet="item_rarity">
+          <ScalarProperty Name="Color" ColumnName="Color" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
