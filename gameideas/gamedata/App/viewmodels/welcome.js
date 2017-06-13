@@ -106,10 +106,10 @@
             alert("Maximum damage (" + newWeapon().Max_Damage + ") must be greater than minimum damage (" + newWeapon().Min_Damage + ")");
             isValid = false;
         }
-        if (parseInt(newWeapon().Max_Durability) <= parseInt(newWeapon().Min_Durability)) {
-            alert("Maximum durability (" + newWeapon().Max_Durability + ") must be greater than minimum durability (" + newWeapon().Min_Durability + ")");
-            isValid = false;
-        }
+        //if (parseInt(newWeapon().Max_Durability) <= parseInt(newWeapon().Min_Durability)) {
+        //    alert("Maximum durability (" + newWeapon().Max_Durability + ") must be greater than minimum durability (" + newWeapon().Min_Durability + ")");
+        //    isValid = false;
+        //}
         if (parseInt(newWeapon().Max_Value) <= parseInt(newWeapon().Min_Value)) {
             alert("Maximum value must be greater than minimum value");
             isValid = false;

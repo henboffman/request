@@ -12,6 +12,7 @@
 
             <li role="presentation"><a href="#environments" aria-controls="environments" role="tab" data-toggle="tab">Environments</a></li>
             <li role="presentation"><a href="#rooms" aria-controls="rooms" role="tab" data-toggle="tab">Rooms</a></li>
+            <li role="presentation"><a href="#testRunner" aria-controls="testRunner" role="tab" data-toggle="tab">Test Runner</a></li>
 
         </ul>
 
@@ -31,8 +32,8 @@
                                     <td>Type</td>
                                     <td>Speed</td>
                                     <td>Weight</td>
-                                    <td>Min. Durability</td>
-                                    <td>Max. Durability</td>
+                                    <!--<td>Min. Durability</td>-->
+                                    <!--<td>Max. Durability</td>-->
                                     <td>Min. Damage</td>
                                     <td>Max. Damage</td>
                                     <td>Min. Value</td>
@@ -51,8 +52,8 @@
                                     <!--/ko-->
                                     <td data-bind="text:Speed"></td>
                                     <td data-bind="text:Weight"></td>
-                                    <td data-bind="text:Min_Durability"></td>
-                                    <td data-bind="text:Max_Durability"></td>
+                                    <<!--td data-bind="text:Min_Durability"></td>
+                                    <td data-bind="text:Max_Durability"></td>-->
                                     <td data-bind="text:Min_Damage"></td>
                                     <td data-bind="text:Max_Damage"></td>
                                     <td data-bind="text:Min_Value"></td>
@@ -70,8 +71,8 @@
                                     <td><select data-bind="options: weaponTypes, optionsText: 'Name', value: newWeapon().TypeId, optionsValue: 'id'"></select></td>
                                     <td><input type="text" class="dataTableInput" data-bind="value:newWeapon().Speed" /></td>
                                     <td><input type="text" class="dataTableInput" data-bind="value:newWeapon().Weight" /></td>
-                                    <td><input type="text" class="dataTableInput" data-bind="value:newWeapon().Min_Durability" /></td>
-                                    <td><input type="text" class="dataTableInput" data-bind="value:newWeapon().Max_Durability" /></td>
+                                    <!--<td><input type="text" class="dataTableInput" data-bind="value:newWeapon().Min_Durability" /></td>
+                                    <td><input type="text" class="dataTableInput" data-bind="value:newWeapon().Max_Durability" /></td>-->
                                     <td><input type="text" class="dataTableInput" data-bind="value:newWeapon().Min_Damage" /></td>
                                     <td><input type="text" class="dataTableInput" data-bind="value:newWeapon().Max_Damage" /></td>
                                     <td><input type="text" class="dataTableInput" data-bind="value:newWeapon().Min_Value" /></td>
@@ -306,7 +307,7 @@
             </div>
             <div role="tabpanel" class="tab-pane" id="environments"></div>
             <div role="tabpanel" class="tab-pane" id="rooms"></div>
-
+            <div role="tabpanel" class="tab-pane" id="testRunner"></div>
         </div>
     </div>
 </section>
