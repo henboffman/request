@@ -20,6 +20,18 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Attack_Type_Id" Type="int" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'request.requestmain.environment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="environment">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="averagePackSize" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="averagePackSize" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="item_rarity">
           <Key>
             <PropertyRef Name="id" />
@@ -126,6 +138,13 @@
           <EntitySet Name="monsters" EntityType="Self.monsters" Schema="requestmain" store:Type="Tables" />
           <EntitySet Name="weapon_types" EntityType="Self.weapon_types" Schema="requestmain" store:Type="Tables" />
           <EntitySet Name="weapons" EntityType="Self.weapons" Schema="requestmain" store:Type="Tables" />
+          <EntitySet Name="environment" EntityType="Self.environment" store:Type="Tables" store:Schema="requestmain">
+            <DefiningQuery>SELECT 
+    [environment].[id] AS [id], 
+    [environment].[name] AS [name], 
+    [environment].[averagePackSize] AS [averagePackSize]
+    FROM [requestmain].[environment] AS [environment]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK__damage_ty__Attac__1CF15040" Association="Self.FK__damage_ty__Attac__1CF15040">
             <End Role="attack_type" EntitySet="attack_type" />
             <End Role="damage_type" EntitySet="damage_type" />
@@ -170,6 +189,7 @@
             <End Role="item_rarity" EntitySet="item_rarity" />
             <End Role="weapon" EntitySet="weapons" />
           </AssociationSet>
+          <EntitySet Name="environments" EntityType="requestModel.environment" />
         </EntityContainer>
         <EntityType Name="weapon_types">
           <Key>
@@ -293,6 +313,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="environment">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="averagePackSize" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="averagePackSize" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -367,6 +397,15 @@
               <MappingFragment StoreEntitySet="item_rarity">
                 <ScalarProperty Name="Color" ColumnName="Color" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="environments">
+            <EntityTypeMapping TypeName="requestModel.environment">
+              <MappingFragment StoreEntitySet="environment">
+                <ScalarProperty Name="averagePackSize" ColumnName="averagePackSize" />
+                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

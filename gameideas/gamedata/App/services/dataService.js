@@ -116,14 +116,40 @@
     //#endregion monsters
 
 
+    //#region environments
+
+    function getEnvironments() {
+        var options = {
+            url: "api/environments",
+            type: "GET"
+        }
+        return $.ajax(options);
+    }
+
+    function createNewEnvironment(environment) {
+        var options = {
+            url: "api/environments",
+            type: "POST",
+            data: environment
+        }
+
+        return $.ajax(options);
+    }
+
+    //#endregion damage types
+
+
+
     var dataService = {
         createAttackType: createAttackType,
         createDamageType: createDamageType,
+        createNewEnvironment: createNewEnvironment,
         createMonster: createMonster,
         createWeapon:createWeapon,
         createWeaponType: createWeaponType,
         getAttackTypes: getAttackTypes,
         getDamageTypes: getDamageTypes,
+        getEnvironments:getEnvironments,
         getMonsters:getMonsters,
         getWeapons: getWeapons,
         getWeaponTypes: getWeaponTypes,

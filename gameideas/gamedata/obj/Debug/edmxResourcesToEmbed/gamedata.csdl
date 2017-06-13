@@ -23,6 +23,7 @@
       <End Role="item_rarity" EntitySet="item_rarity" />
       <End Role="weapon" EntitySet="weapons" />
     </AssociationSet>
+    <EntitySet Name="environments" EntityType="requestModel.environment" />
   </EntityContainer>
   <EntityType Name="weapon_types">
     <Key>
@@ -146,4 +147,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="environment">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="averagePackSize" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="averagePackSize" Type="Int32" Nullable="false" />
+  </EntityType>
 </Schema>

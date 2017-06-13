@@ -8,3 +8,9 @@ E:\Code\request\gameideas\gameconsole\bin\Debug\gameconsole.exe
 E:\Code\request\gameideas\gameconsole\bin\Debug\gameconsole.pdb
 E:\Code\request\gameideas\gameconsole\obj\Debug\gameconsole.exe
 E:\Code\request\gameideas\gameconsole\obj\Debug\gameconsole.pdb
+C:\Code\gamerequest\request\gameideas\gameconsole\bin\Debug\gameconsole.exe.config
+C:\Code\gamerequest\request\gameideas\gameconsole\bin\Debug\gameconsole.exe
+C:\Code\gamerequest\request\gameideas\gameconsole\bin\Debug\gameconsole.pdb
+C:\Code\gamerequest\request\gameideas\gameconsole\obj\Debug\gameconsole.csprojResolveAssemblyReference.cache
+C:\Code\gamerequest\request\gameideas\gameconsole\obj\Debug\gameconsole.exe
+C:\Code\gamerequest\request\gameideas\gameconsole\obj\Debug\gameconsole.pdb

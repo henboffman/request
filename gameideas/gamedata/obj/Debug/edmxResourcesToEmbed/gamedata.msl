@@ -73,5 +73,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="environments">
+      <EntityTypeMapping TypeName="requestModel.environment">
+        <MappingFragment StoreEntitySet="environment">
+          <ScalarProperty Name="averagePackSize" ColumnName="averagePackSize" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

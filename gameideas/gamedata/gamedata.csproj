@@ -247,12 +247,16 @@
     <Compile Include="Controllers\attack_typeController.cs" />
     <Compile Include="Controllers\damage_typeController.cs" />
     <Compile Include="Controllers\DurandalController.cs" />
+    <Compile Include="Controllers\environmentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\monstersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\weaponsController.cs" />
     <Compile Include="Controllers\weapon_typesController.cs" />
     <Compile Include="damage_type.cs">
+      <DependentUpon>gamedata.tt</DependentUpon>
+    </Compile>
+    <Compile Include="environment.cs">
       <DependentUpon>gamedata.tt</DependentUpon>
     </Compile>
     <Compile Include="gamedata.Context.cs">
@@ -296,6 +300,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Services\EnemyService.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="weapon.cs">
       <DependentUpon>gamedata.tt</DependentUpon>

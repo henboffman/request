@@ -307,7 +307,41 @@
             </div>
             <div role="tabpanel" class="tab-pane" id="environments"></div>
             <div role="tabpanel" class="tab-pane" id="rooms"></div>
-            <div role="tabpanel" class="tab-pane" id="testRunner"></div>
+            
+            <div role="tabpanel" class="tab-pane" id="testRunner">
+                <h3>Test Runner</h3>
+                <!--<button class="btn btn-primary" data-toggle="modal" data-target="#attackTypeModal">Create Attack Type</button>-->
+                <button data-bind="click: toggleCreateEnvironment">Create Environment</button>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td class="dataTableIdField">Id</td>
+                            <td>Name</td>
+                            <td>Average Pack Size</td>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: environments">
+                        <tr>
+                            <td data-bind="text: id"></td>
+                            <td data-bind="text: name"></td>
+                            <td data-bind="text: averagePackSize"></td>
+                        </tr>
+                    </tbody>
+                    <!--ko if: createNewEnvironment()-->
+                    <tbody>
+                        <tr>
+                            <td>
+                                <i class="fa fa-floppy-o fa-2x" style="margin-right:10px;" aria-hidden="true" data-bind="click:saveEnvironment"></i>
+                                <i class="fa fa-trash fa-2x" aria-hidden="true" data-bind="click: toggleCreateEnvironment"></i>
+                            </td>
+                            <td><input type="text" class="dataTableInput" data-bind="newEnvironment().name" /></td>
+                            <td><input type="text" class="dataTableInput" data-bind="newEnvironment().averagePackSize" /></td>
+                        </tr>
+                    </tbody>
+                    <!--/ko-->
+                </table>
+            </div>
+
         </div>
     </div>
 </section>

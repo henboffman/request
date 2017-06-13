@@ -51,6 +51,12 @@ namespace gamedata.Controllers
             return newPack;
         }
 
+        //todo spawn environment (number of packs per environment)
+        //todo attack pack
+        //todo attack enemy per pack
+        //todo roll drop chance
+        //todo advance to next pack
+
         public monster RollMonster()
         {
             //if class was not specified, roll random MonsterClass

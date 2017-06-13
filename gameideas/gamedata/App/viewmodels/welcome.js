@@ -23,6 +23,10 @@
     var newMonster = ko.observable();
     var createNewMonster = ko.observable(false);
 
+    var environments = ko.observableArray([]);
+    var newEnvironment = ko.observable();
+    var createNewEnvironment = ko.observable(false);
+
     var AttackType = function () {
         var self = this;
         self.Name = "";
@@ -35,6 +39,13 @@
         self.id = 0;
         self.Attack_Type_Id = 0;
     };
+
+    var Environment = function () {
+        var self = this;
+        self.id = 0;
+        self.name = "";
+        self.averagePackSize = 5;
+    }
 
     var Monster = function () {
         var self = this;
@@ -298,12 +309,88 @@
     //#endregion
 
 
+
+
+    //#region Environments
+
+    function toggleCreateEnvironment() {
+        createNewEnvironment(!createNewEnvironment());
+        if (!createNewEnvironment()) {
+            newEnvironment(new Environment());
+        }
+    }
+
+    function getEnvironments() {
+        return dataService.getEnvironments().then(function (returnedEnvironments) {
+            console.log(returnedEnvironments);
+            environments(returnedEnvironments);
+        });
+    }
+
+    function validateEnvironment() {
+        var isValid = true;
+        if (newEnvironment().Name == "") {
+            alert("Name is required");
+            isValid = false;
+        }
+        if (newEnvironment().averagePackSize == "") {
+            alert("average pack size required");
+            isValid = false;
+        }
+        return isValid;
+    }
+
+    function saveEnvironment() {
+        console.log(newEnvironment());
+        if (validateEnvironment()) {
+            return dataService.createNewEnvironment(newEnvironment()).then(function (savedEnvironment) {
+                console.log(savedEnvironment);
+            });
+        }
+    }
+
+    //function validateWeaponType() {
+    //    var isValid = true;
+    //    if (newWeaponType().Name == "") {
+    //        alert("Weapon name is required");
+    //        isValid = false;
+    //    }
+    //    if (newWeaponType().Description == "") {
+    //        alert("Weapon type is required");
+    //        isValid = false;
+    //    }
+    //    return isValid;
+    //}
+
+    //function saveWeaponType() {
+    //    console.log(newWeaponType());
+    //    if (validateWeaponType()) {
+    //        return dataService.createWeaponType(newWeaponType()).then(function (savedWeaponType) {
+    //            console.log(savedWeaponType);
+    //            weaponTypes.push(savedWeaponType);
+    //            $('#weaponTypeModal').modal('hide');
+    //            newWeaponType(new WeaponType());
+    //        });
+    //    }
+
+    //}
+
+    //#endregion
+
+
+
+
+
+
+
+
     function activate() {
         if (initialized) return initialized;
 
         //initialize arrays
         getAttackTypes();
         getDamageTypes();
+        getEnvironments();
         getMonsters();
         getWeapons();
         getWeaponTypes();
@@ -311,6 +398,7 @@
         //initialize new Items
         newAttackType(new AttackType());
         newDamageType(new DamageType());
+        newEnvironment(new Environment());
         newMonster(new Monster());
         newWeapon(new Weapon());
         newWeaponType(new WeaponType());
@@ -324,10 +412,12 @@
         attackTypes: attackTypes,
         createNewAttackType:createNewAttackType,
         createNewDamageType: createNewDamageType,
+        createNewEnvironment:createNewEnvironment,
         createNewMonster:createNewMonster,
         createNewWeapon: createNewWeapon,
         createNewWeaponType :createNewWeaponType ,
-        damageTypes: damageTypes,        
+        damageTypes: damageTypes,
+        environments:environments,
         getWeapons: getWeapons,
         monsters:monsters,
         newAttackType: newAttackType,
@@ -338,12 +428,14 @@
         spawnWeapon:spawnWeapon,
         saveAttackType: saveAttackType,
         saveDamageType: saveDamageType,
+        saveEnvironment:saveEnvironment,
         saveMonster:saveMonster,
         saveWeapon: saveWeapon,
         saveWeaponType: saveWeaponType,
         testWeapons: testWeapons,
         toggleCreateAttackType:toggleCreateAttackType,
         toggleCreateDamageType: toggleCreateDamageType,
+        toggleCreateEnvironment:toggleCreateEnvironment,
         toggleCreateMonster: toggleCreateMonster,
         toggleCreateWeapon: toggleCreateWeapon,
         toggleCreateWeaponType:toggleCreateWeaponType,
