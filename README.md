@@ -40,6 +40,9 @@
 6. Create new scaffolded controller (webapi 2 w/ EF)
 7. Add methods (get all, create) to dataservice
 8. Add functionality to gamedata site
+8a. Get / create method
+8b. Add to activate method
+8c. Expose in html
 
 #### Adding Relationships
 
